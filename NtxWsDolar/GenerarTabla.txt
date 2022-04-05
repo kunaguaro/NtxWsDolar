@@ -2,7 +2,8 @@
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[FechaPagina] [date] NULL,
 	[FechaProcesado] [date] NULL,
-	[CambioDolar] [decimal](18, 3) NULL,
+	[CambioDolarCompra] [decimal](18, 3) NULL,
+	[CambioDolarVenta] [decimal](18, 3) NULL,
 	[ErrorDescripcion] [nvarchar](1000) NULL,
 	[FechaCreacion] [datetime] NULL,
  CONSTRAINT [PK_ScraperDolar] PRIMARY KEY CLUSTERED 

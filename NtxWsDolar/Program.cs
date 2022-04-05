@@ -60,20 +60,23 @@ namespace NtxWsDolar
                 var tds = doc.DocumentNode.SelectNodes(".//td");
                 var inputs = doc.DocumentNode.SelectNodes(".//input");
                 string strFechaPagina = inputs[7].Attributes["value"].Value;
-                decimal dolarPrice = 0;
+                decimal dolarPriceCompra = 0;
+                decimal dolarPriceVenta = 0;
                 DateTime fechaPagina;
               
 
-                var resultDolar = decimal.TryParse(tds[67].InnerText, out dolarPrice);
+                var resultDolarCompra = decimal.TryParse(tds[67].InnerText, out dolarPriceCompra);
+                var resultDolarVenta = decimal.TryParse(tds[68].InnerText, out dolarPriceVenta);
                 var resultFecha = DateTime.TryParse(inputs[7].Attributes["value"].Value, out fechaPagina);
 
 
-                if (resultDolar && resultFecha)
+                if (resultDolarCompra && resultFecha && resultDolarVenta)
                 {
 
                     scraperDolar.StrFechaPagina = strFechaPagina;
                     scraperDolar.StrFechaProcesado = DateTime.Now.ToString($"dd/MM/yyyy");
-                    scraperDolar.CambioDolar = dolarPrice;
+                    scraperDolar.CambioDolarCompra = dolarPriceCompra;
+                    scraperDolar.CambioDolarVenta = dolarPriceVenta;
                     scraperDolar.ErrorDescripcion = "";
                     scraperDolar.FechaPagina = fechaPagina;
                     scraperDolar.FechaProcesado = DateTime.Now;

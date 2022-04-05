@@ -22,8 +22,8 @@ namespace NtxWsDolar.Dal
         public int AddNewScraperDate(ScraperDolar scraperDolar)
         {
             string sqlQry = "";
-            sqlQry = string.Format("INSERT INTO dbo.ScraperDolar(FechaPagina,FechaProcesado,CambioDolar,ErrorDescripcion, FechaCreacion)VALUES('{0}','{1}',{2},'{3}','{4}')",
-                scraperDolar.StrFechaPagina, scraperDolar.StrFechaProcesado, scraperDolar.CambioDolar, scraperDolar.ErrorDescripcion, scraperDolar.FechaCreacion);
+            sqlQry = string.Format("INSERT INTO dbo.ScraperDolar(FechaPagina,FechaProcesado,CambioDolarCompra,CambioDolarVenta,ErrorDescripcion, FechaCreacion)VALUES('{0}','{1}','{2}','{3}','{4}','{5}')",
+                scraperDolar.StrFechaPagina, scraperDolar.StrFechaProcesado, scraperDolar.CambioDolarCompra, scraperDolar.CambioDolarVenta, scraperDolar.ErrorDescripcion, scraperDolar.FechaCreacion);
 
 
             {
